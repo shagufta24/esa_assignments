@@ -6,5 +6,8 @@ module.exports = (app) => {
   // Retrieve all products
   router.get("/products", products.findAll);
 
+  // Update quantity
+  router.get("/updateQuantity", products.updateQuantity);
+
   app.use("/rest/v1", router);
 };

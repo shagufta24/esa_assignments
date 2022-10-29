@@ -1,3 +1,5 @@
+var ObjectId = require('mongoose').Types.ObjectId; 
+
 const db = require("../models");
 const Product = db.products;
 
@@ -19,3 +21,12 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+exports.updateQuantity = async (req, res) => {
+  const productId = req.query.productId
+  const quantity = req.query.quantity
+
+  await Product.updateOne({_id: ObjectId(productId)}, {$inc: {availableQuantity: -quantity}})
+
+  res.send({msg: "Updated successfully!"})
+}
