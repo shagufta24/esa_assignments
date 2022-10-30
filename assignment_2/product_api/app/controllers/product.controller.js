@@ -26,7 +26,7 @@ exports.updateQuantity = async (req, res) => {
   const productId = req.query.productId
   const quantity = req.query.quantity
 
-  await Product.updateOne({_id: ObjectId(productId)}, {$inc: {availableQuantity: -quantity}})
+  await Product.updateOne({productId: productId}, {$inc: {availableQuantity: -quantity}})
 
   res.send({msg: "Updated successfully!"})
 }

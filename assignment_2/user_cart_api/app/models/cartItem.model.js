@@ -5,7 +5,7 @@ module.exports = (mongoose) => {
         {
           productId: String,
           quantity: Number,
-          userId: String
+          user: String
         },
         { timestamps: true }
       )
