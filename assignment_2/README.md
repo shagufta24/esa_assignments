@@ -1,5 +1,7 @@
 # ESA Assignment 2
 
+Github repository URL: https://github.com/shagufta24/esa_assignments/tree/main/assignment_2
+
 ## Summary
 
 Writing backend services for a simple online shopping cart platform using microservices linked via API calls.
@@ -62,7 +64,9 @@ DATABASES:<br>
 1. products<br>
 2. cart items<br>
 
-server.js file in each microservice to run the server.
+server.js file in each microservice to run the server.<br><br>
+Hardcoded user names: shagufta, mec, john.<br>
+The username is the URL must match one of these users to be valid.
 
 ## API documentation
 
@@ -88,10 +92,11 @@ server.js file in each microservice to run the server.
 ]
 ```
 
-2. PUT CartItem API: Exposed in the UserCart microservice. Used to create/update a product in user cart.<br>
-
+2. PUT CartItem API: Exposed in the UserCart microservice. Used to create/update a product in user cart.
+   <br>
    HTTP Method: PUT<br>
    Request URI: /rest/v1/users/<uuid>/cart <br>
+   Validation: The quantity must be less than or equal to available quantity in the products database. The productId must match a productId in the products database.<br>
    Body Parameter example:
 
 ```
@@ -183,8 +188,6 @@ Output :
 product_api RESTful API server started on: 8080
 
 ```
-
-## Validation
 
 ## Built With
 
