@@ -42,9 +42,9 @@ xdr_readdir_res (XDR *xdrs, readdir_res *objp)
 {
 	register int32_t *buf;
 
-	 if (!xdr_int (xdrs, &objp->errno))
+	 if (!xdr_int (xdrs, &objp->errnum))
 		 return FALSE;
-	switch (objp->errno) {
+	switch (objp->errnum) {
 	case 0:
 		 if (!xdr_namelist (xdrs, &objp->readdir_res_u.list))
 			 return FALSE;
